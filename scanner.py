@@ -1,21 +1,23 @@
 
 # coding: utf-8
 
-# In[7]:
+# In[37]:
 
 from autopy import *
 
 
-# In[8]:
+# In[38]:
 
 # Cache screen size
 screen_width, screen_height= screen.get_size()
+
+
 # Indexes
 X = 0;
 Y = 1;
 
 
-# In[9]:
+# In[39]:
 
 # Create the "class" wrapper
 class Scanner:
@@ -50,21 +52,23 @@ class Scanner:
     #
     #  Example: (X direction)
     #    scanUntil([0,0], [1, 0], "000000");
-    def scanUntil (self,start, delta, matchColor, inverted, iterLimit):
+    def scanUntil (self,start, delta, matchColor, inverted, iterLimit, bmp):
         iterations = 0
         # CLONE instead of using the real one
         current = self.makeInBounds([start[X], start[Y]])
-
+        
+        
         if (delta[X] == 0 and delta[Y] == 0):
             return None
   
         while (self.isOutOfBound(current)== False):
             # Check current pixel
-            color = bitmap.capture_screen().get_color(current[X], current[Y])
-
+            color = bmp.get_color(current[X], current[Y])
+            
             if (inverted == False and color == matchColor):
-                return current
-
+				
+				return current
+				
             if (inverted and color != matchColor):
                 return current;
             current[X] += delta[X];
