@@ -1,4 +1,4 @@
-[<img src="https://img.youtube.com/vi/MtJTv-f51nc.jpg" width="50%">](https://youtu.be/MtJTv-f51nc)
+[<img src="https://img.youtube.com/vi/MtJTv-f51nc/maxresdefault.jpg" width="50%">](https://youtu.be/MtJTv-f51nc)
 
 Settings :
 
